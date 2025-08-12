@@ -1,0 +1,18 @@
+//tealium universal tag - utag.477 ut4.0.202508110530, Copyright 2025 Tealium.com Inc. All Rights Reserved.
+try{(function(id,loader){var u={"id":id};utag.o[loader].sender[id]=u;if(utag.ut===undefined){utag.ut={};}
+var match=/ut\d\.(\d*)\..*/.exec(utag.cfg.v);if(utag.ut.loader===undefined||!match||parseInt(match[1])<35){u.loader=function(o){var b,c,l,a=document;if(o.type==="iframe"){b=a.createElement("iframe");o.attrs=o.attrs||{"height":"1","width":"1","style":"display:none"};for(l in utag.loader.GV(o.attrs)){b.setAttribute(l,o.attrs[l]);}
+b.setAttribute("src",o.src);}else if(o.type==="img"){b=new Image();b.src=o.src;return;}else{b=a.createElement("script");b.language="javascript";b.type="text/javascript";b.async=1;b.charset="utf-8";for(l in utag.loader.GV(o.attrs)){b[l]=o.attrs[l];}
+b.src=o.src;}
+if(o.id){b.id=o.id;}
+if(typeof o.cb==="function"){if(b.addEventListener){b.addEventListener("load",function(){o.cb();},false);}else{b.onreadystatechange=function(){if(this.readyState==='complete'||this.readyState==='loaded'){this.onreadystatechange=null;o.cb();}};}}
+l=o.loc||"head";c=a.getElementsByTagName(l)[0];if(c){if(l==="script"){c.parentNode.insertBefore(b,c);}else{c.appendChild(b);}}};}else{u.loader=utag.ut.loader;}
+u.ev={"view":1,"link":1};function buildQueryString(params){return Object.keys(params)
+.map(function(key){return encodeURIComponent(key)+'='+encodeURIComponent(params[key]);})
+.join('&');}
+function removeDuplicateQueryParams(queryString){if(!queryString)return queryString;let params=queryString.split("&");let filteredParams=params.filter(param=>{if(param.includes("ut.profile=")||param.includes("tealium_visitor_id=")||param.includes("ut.visitor_id")||param.includes("ut.account")||param.includes("tealium_account")||param.startsWith("va.")||param.startsWith("tealium_profile")||param.startsWith("meta.og%3Adescription")){return false;}
+return true;});return filteredParams.join("&");}
+u.send=function(a,b){if(u.ev[a]||u.ev.all!==undefined){var randomNum=Math.floor(Math.random()*1000000);var tealiumAccount="rea-group";var tealiumProfile="web-merge-stitch";var tealiumVid=(b&&b['tealium_visitor_id'])?b['tealium_visitor_id']+"-"+tealiumProfile:b['tealium_visitor_id']+"-"+tealiumProfile;var baseUrl="//collect.tealiumiq.com/vdata/i.gif?tealium_account="+encodeURIComponent(tealiumAccount)+
+"&tealium_profile="+encodeURIComponent(tealiumProfile)+
+"&tealium_datasource="+encodeURIComponent("d5gu4h")+
+"&tealium_visitor_id="+encodeURIComponent(tealiumVid)+
+"&random="+randomNum;var queryString=buildQueryString(b);queryString=removeDuplicateQueryParams(queryString);var fullUrl=baseUrl+"&"+queryString;var img=new Image();img.src=fullUrl;img.height=1;img.width=1;img.style.display="none";}};utag.o[loader].loader.LOAD(id);}("477","rea-group.main"));}catch(error){utag.DB(error);}
